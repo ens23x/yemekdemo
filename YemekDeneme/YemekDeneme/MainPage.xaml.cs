@@ -13,6 +13,7 @@ namespace YemekDeneme
 
         public MainPage()
         {
+            //TEST
             InitializeComponent();
 
             CreateDatabaseAsync();
