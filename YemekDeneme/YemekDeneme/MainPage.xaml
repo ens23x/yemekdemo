@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:YemekDeneme"
+             x:Class="YemekDeneme.MainPage">
+
+  <StackLayout>
+
+    <Label Text="Yemek candır!" HorizontalOptions="Center" />
+
+    <Label Text="Yemek adı:" FontSize="Micro" />
+    <Entry x:Name="yemekAd" Placeholder="Yemek adı" ></Entry>
+
+    <Label Text="Malzemeler:" FontSize="Micro" />
+    <Entry x:Name="malzeme" Placeholder="Malzemeler" ></Entry>
+
+    <Label Text="Tarif:" FontSize="Micro" />
+    <Entry x:Name="tarif" Placeholder="Tarif" ></Entry>
+
+    <Button Text="Ekle" Clicked="TarifEkleClicked"></Button>
+
+    <ListView x:Name="TarifList" RowHeight="70">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout>
+              <Label Text="{Binding YemekAd, StringFormat='Yemek: {0}'}" Font="Bold" />
+              <Label Text="{Binding Malzeme, StringFormat='Malzemeler: {0}'}" />
+              <Label Text="{Binding Tarif, StringFormat='Tarif: {0}'}" />
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+
+  </StackLayout>
+
+</ContentPage>
+
